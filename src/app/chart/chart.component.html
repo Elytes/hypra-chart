@@ -1,0 +1,28 @@
+<div class="token-infos-container">
+  <div class="token-infos-card">
+    <h1 class="title">Current price</h1>
+    <h1 class="value">{{ currentPrice() | number : ".1-8" }}$</h1>
+  </div>
+  <div class="token-infos-card">
+    <h1 class="title">Current market cap</h1>
+    <h1 class="value">{{ marketCap() | number }}$</h1>
+  </div>
+  <div class="token-infos-card">
+    <h1 class="title">Total supply</h1>
+    <h1 class="value">{{ totalSupply() | number }}</h1>
+  </div>
+  <div class="token-infos-card">
+    <button class="add-tokens-button" (click)="addTokens()">Add</button>
+    <h1 class="title">Your tokens</h1>
+    <h1 class="value">{{ yourTokens() | number }} ({{ money() | number }}$)</h1>
+  </div>
+  <div class="token-infos-card">
+    <h1 class="title">24h change</h1>
+    <h1 class="value">{{ change() | number }}%</h1>
+  </div>
+</div>
+<div class="chart-wrapper">
+  <div class="chart-container" #chartContainer>
+    <canvas id="hypraChart">{{ chart }}</canvas>
+  </div>
+</div>
